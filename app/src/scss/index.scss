@@ -1,6 +1,148 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 @import "layout/root";
 
-.navbar-brand{
-  width: 183px;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.mx-4{
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.ml-4{
+  margin-left: 24px;
+}
+
+.mr-2{
+  margin-right: 8px;
+}
+
+.header{
+  background: linear-gradient(124.13deg, #F4CB38 10.97%, #F4A938 77.98%);
+
+  &__nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 0 10px 0;
+  }
+
+  &__logo{
+    display: flex;
+    align-items: center;
+
+    &_img{
+      max-width: 183px;
+    }
+
+    &__text{
+      font-weight: 900;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: 0.065em;
+      text-transform: uppercase;
+      margin-left: 17px;
+    }
+  }
+
+  &__list{
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+
+  &__item{
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    svg{
+      margin-right: 12px;
+    }
+  }
+
+  &__link{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+
+    &.active{
+      font-weight: 700;
+
+      &::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -8px;
+        left: 0;
+        background: rgba(0, 0, 0, 0.21);
+      }
+    }
+
+    &.fw-bold{
+      font-weight: 700;
+    }
+  }
+
+  a{
+    text-decoration: none;
+    color: #000;
+  }
+
+  &__triangle{
+    width: 0;
+    height: 0;
+    border-top: 5px solid #000;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+  }
+
+  &__btn{
+    position: relative;
+    width: 30px;
+    height: 40px;
+    cursor: pointer;
+    display: none;
+    
+    @include media($xl){
+      display: block;
+    }
+
+    &__line{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #000;
+      transform: translateY(-50%);
+      transition: 0.3s ease;  
+
+      &::before{
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: #000;
+      }
+      &::after{
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: #000;
+      }
+    }
+  }
 }
